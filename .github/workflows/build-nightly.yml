@@ -77,7 +77,7 @@ jobs:
           last-commit-sha: ${{ github.event.before }}
           commit-sha: ${{ github.sha }}
 
-      - run: gh release create -R "$NIGHTLY_REPO" $NIGHTLY_TAG app/build/outputs/apk/$BUILD_TYPE/*.apk --latest --prerelease --notes "$RELEASE_NOTE"
+      - run: gh release create -R "$NIGHTLY_REPO" $NIGHTLY_TAG app/build/outputs/apk/$BUILD_TYPE/*.apk --prerelease --notes "$RELEASE_NOTE"
         env:
           GITHUB_TOKEN: ${{ secrets.NIGHTLY_REPO_ACCESS_TOKEN }}
           NIGHTLY_REPO: ${{ vars.NIGHTLY_REPO_URL }}
