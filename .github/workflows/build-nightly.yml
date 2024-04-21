@@ -1,7 +1,6 @@
 name: Build nightly APK
 
 env:
-  BUILD_FLAVOR: foss
   BUILD_TYPE: nightly
 
 on:
@@ -61,12 +60,12 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: linksheet-assist-nightly
-          path: app/build/outputs/apk/foss/nightly/*.apk
+          path: app/build/outputs/apk/nightly/*.apk
 
       - name: Get file name
         id: get_file_name
         shell: bash
-        run: echo "FILE_NAME=$(cat app/build/outputs/apk/$BUILD_FLAVOR/$BUILD_TYPE/output-metadata.json | jq '.elements[0].versionCode')" >> "$GITHUB_OUTPUT"
+        run: echo "FILE_NAME=$(cat app/build/outputs/apk/$BUILD_TYPE/output-metadata.json | jq '.elements[0].versionCode')" >> "$GITHUB_OUTPUT"
 
       - name: Nightly release notes
         id: release_note
@@ -78,11 +77,10 @@ jobs:
           last-commit-sha: ${{ github.event.before }}
           commit-sha: ${{ github.sha }}
 
-      - run: gh release create -R "$NIGHTLY_REPO" $NIGHTLY_TAG app/build/outputs/apk/$BUILD_FLAVOR/$BUILD_TYPE/*.apk --latest --prerelease --notes "$RELEASE_NOTE"
+      - run: gh release create -R "$NIGHTLY_REPO" $NIGHTLY_TAG app/build/outputs/apk/$BUILD_TYPE/*.apk --latest --prerelease --notes "$RELEASE_NOTE"
         env:
           GITHUB_TOKEN: ${{ secrets.NIGHTLY_REPO_ACCESS_TOKEN }}
           NIGHTLY_REPO: ${{ vars.NIGHTLY_REPO_URL }}
           NIGHTLY_TAG: ${{ steps.get_file_name.outputs.FILE_NAME }}
           RELEASE_NOTE: ${{ steps.release_note.outputs.releaseNote }}
-          BUILD_FLAVOR: ${{ env.BUILD_FLAVOR }}
           BUILD_TYPE: ${{ env.BUILD_TYPE }}
