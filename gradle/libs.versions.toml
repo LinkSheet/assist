@@ -2,7 +2,7 @@
 
 [plugins]
 
-com-android-application = { id = "com.android.application", version = "8.1.2" }
+com-android-application = { id = "com.android.application", version = "8.2.0" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 net-nemerosa-versioning = { id = "net.nemerosa.versioning", version = "3.1.0" }
 gradle = { id = "gradle", version = "8.1.2" }
