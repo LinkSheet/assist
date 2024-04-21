@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.service.voice.VoiceInteractionSession
 import android.text.TextUtils
 import android.util.Log
+import android.widget.Toast
 
 
 class AssistSession(context: Context) : VoiceInteractionSession(context) {
@@ -53,8 +54,9 @@ class AssistSession(context: Context) : VoiceInteractionSession(context) {
                     finish()
                 }
             }
-
-
+        } else {
+            Toast.makeText(context, R.string.no_uri_provided, Toast.LENGTH_SHORT).show()
+            finish()
         }
 
 
