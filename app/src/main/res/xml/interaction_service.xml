@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<voice-interaction-service xmlns:android="http://schemas.android.com/apk/res/android"
+                           android:sessionService="fe.linksheet.assist.AssistSessionService"
+                           android:recognitionService="fe.linksheet.assist.AssistService"
+                           android:supportsAssist="true"/>
+        <!--                           android:supportsLocalInteraction="true"-->
+
