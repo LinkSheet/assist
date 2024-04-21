@@ -4,8 +4,12 @@
 
 com-android-application = { id = "com.android.application", version = "8.1.2" }
 com-android-library = { id = "com.android.library", version = "8.1.2" }
-org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "1.9.23" }
-net-nemerosa-versioning = { id = "net.nemerosa.versioning", version = "3.0.0" }
+org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+net-nemerosa-versioning = { id = "net.nemerosa.versioning", version = "3.1.0" }
 gradle = { id = "gradle", version = "8.1.2" }
 
 com-google-devtools-ksp = { id = "com.google.devtools.ksp", version = "1.9.23-1.0.20" }
+
+[versions]
+
+kotlin = "1.9.23"

@@ -50,7 +50,7 @@ jobs:
           encodedString: ${{ secrets.KEYSTORE_FILE }}
 
       - uses: gradle/actions/setup-gradle@v3
-      - run: ./gradlew assembleFossNightly
+      - run: ./gradlew assembleNightly
         env:
           GITHUB_WORKFLOW_RUN_ID: ${{ github.run_id }}
           KEYSTORE_FILE_PATH: ${{ steps.android_keystore.outputs.filePath }}
@@ -60,7 +60,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: linksheet-nightly
+          name: linksheet-assist-nightly
           path: app/build/outputs/apk/foss/nightly/*.apk
 
       - name: Get file name
