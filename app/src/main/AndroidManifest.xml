@@ -3,6 +3,24 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools">
 
+
+    <queries>
+        <!-- Legacy LinkSheet packages -->
+        <package android:name="fe.linksheet" />
+        <package android:name="fe.linksheet.nightly" />
+        <package android:name="fe.linksheet.debug" />
+
+        <!-- LinkSheet Pro packages -->
+        <package android:name="fe.linksheet.pro" />
+        <package android:name="fe.linksheet.pro.nightly" />
+        <package android:name="fe.linksheet.pro.debug" />
+
+        <!-- LinkSheet FOSS packages -->
+        <package android:name="fe.linksheet.foss" />
+        <package android:name="fe.linksheet.foss.nightly" />
+        <package android:name="fe.linksheet.foss.debug" />
+    </queries>
+
     <application
             android:allowBackup="true"
             android:dataExtractionRules="@xml/data_extraction_rules"
@@ -23,5 +41,4 @@
                  android:permission="android.permission.BIND_VOICE_INTERACTION"/>
 
     </application>
-
 </manifest>
