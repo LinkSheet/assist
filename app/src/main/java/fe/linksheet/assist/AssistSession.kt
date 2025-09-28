@@ -24,7 +24,7 @@ class AssistSession(context: Context) : VoiceInteractionSession(context) {
         if (AndroidVersion.isAtLeastApi29Q()) {
             val webUri = state.assistContent?.webUri
             if (webUri != null) {
-                start(webUri)
+                LinkSheetApp.LinkSheet.start(webUri)
             } else {
                 Toast.makeText(context, R.string.no_uri_provided, Toast.LENGTH_SHORT).show()
             }
@@ -32,10 +32,10 @@ class AssistSession(context: Context) : VoiceInteractionSession(context) {
         finish()
     }
 
-    private fun start(uri: Uri): Boolean {
-        val infos = LinkSheetApp.LinkSheet.find(context)
+    private fun LinkSheetApp.LinkSheet.start(uri: Uri): Boolean {
+        val infos = find(context)
         for (info in infos) {
-            val intent = LinkSheetApp.LinkSheet.createIntent(uri, info.componentName)
+            val intent = createIntent(uri, info.componentName)
             val result = tryCatch { startAssistantActivity(intent) }
             if (result.isSuccess()) return true
         }
