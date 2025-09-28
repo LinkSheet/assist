@@ -1,8 +1,6 @@
 package fe.linksheet.assist
 
 import android.service.voice.VoiceInteractionService
-import android.service.voice.VoiceInteractionSession
-import java.util.*
 
 
 class AssistService : VoiceInteractionService() {

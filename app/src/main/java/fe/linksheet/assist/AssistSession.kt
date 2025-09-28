@@ -6,9 +6,9 @@ import android.net.Uri
 import android.service.voice.VoiceInteractionSession
 import android.widget.Toast
 import androidx.core.content.getSystemService
+import app.linksheet.lib.flavors.LinkSheetApp
 import fe.composekit.core.AndroidVersion
 import fe.composekit.extension.componentName
-import fe.linksheet.lib.flavors.LinkSheetApp
 import fe.std.result.isSuccess
 import fe.std.result.tryCatch
 

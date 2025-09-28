@@ -102,7 +102,6 @@ android {
     }
 
     buildFeatures {
-        aidl = true
         buildConfig = true
     }
 
@@ -115,38 +114,15 @@ android {
 
 dependencies {
     implementation(AndroidX.core.ktx)
-    implementation(AndroidX.activity.compose)
-
-    implementation(platform(AndroidX.compose.bom))
-    implementation(AndroidX.compose.ui)
-    implementation(AndroidX.compose.ui.graphics)
-    implementation(AndroidX.compose.ui.toolingPreview)
-    implementation(AndroidX.compose.material3)
-    implementation(Google.android.material)
 
     implementation(platform(Grrfe.std.bom))
     implementation(Grrfe.std.result.core)
 
     implementation(platform(_1fexd.composeKit.bom))
-    implementation(_1fexd.composeKit.compose.core)
-    implementation(_1fexd.composeKit.compose.layout)
-    implementation(_1fexd.composeKit.compose.component)
-    implementation(_1fexd.composeKit.compose.app)
-    implementation(_1fexd.composeKit.compose.theme.core)
-    implementation(_1fexd.composeKit.compose.theme.preference)
-    implementation(_1fexd.composeKit.compose.dialog)
-    implementation(_1fexd.composeKit.compose.route)
     implementation(_1fexd.composeKit.core)
-    implementation(_1fexd.composeKit.koin)
-    implementation(_1fexd.composeKit.process)
-    implementation(_1fexd.composeKit.lifecycle.core)
-    implementation(_1fexd.composeKit.lifecycle.koin)
-    implementation(_1fexd.composeKit.preference.core)
-    implementation(_1fexd.composeKit.preference.compose.core)
-    implementation(_1fexd.composeKit.preference.compose.core2)
-    implementation(_1fexd.composeKit.preference.compose.mock)
-    implementation(_1fexd.composeKit.span.core)
-    implementation(_1fexd.composeKit.span.compose)
-    implementation(platform(LinkSheet.flavors.bom))
-    implementation(LinkSheet.flavors.core)
+
+    implementation(platform(LinkSheet.flavors.bom.withVersion("0.0.15")))
+    implementation(LinkSheet.flavors.core.withVersion("0.0.15"))
+//    implementation(platform("com.github.LinkSheet.flavors:platform:0.0.13"))
+//    implementation("com.github.LinkSheet.flavors:core:0.0.13")
 }
