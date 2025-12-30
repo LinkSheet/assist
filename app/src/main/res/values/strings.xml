@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">LinkSheet Assist</string>
     <string name="no_uri_provided">No url found!</string>
+    <string name="web_uri">Web uri</string>
 </resources>

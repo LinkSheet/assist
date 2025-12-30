@@ -30,11 +30,11 @@ versioning {
 var appName = "LinkSheet Assistant"
 
 android {
-    namespace = "fe.linksheet.assist"
+    namespace = "app.linksheet.assist"
     compileSdk = AndroidSdk.COMPILE_SDK
 
     defaultConfig {
-        applicationId = "fe.linksheet.assist"
+        applicationId = "app.linksheet.assist"
         minSdk = AndroidSdk.MIN_SDK
         targetSdk = AndroidSdk.COMPILE_SDK
 
@@ -98,7 +98,7 @@ android {
 
     kotlin {
         jvmToolchain(Version.JVM)
-        addCompilerOptions(CompilerOption.SkipPreReleaseCheck)
+        addCompilerOptions(CompilerOption.SkipPreReleaseCheck, CompilerOption.NestedTypeAliases)
     }
 
     buildFeatures {
@@ -113,16 +113,11 @@ android {
 }
 
 dependencies {
-    implementation(AndroidX.core.ktx)
-
     implementation(platform(Grrfe.std.bom))
-    implementation(Grrfe.std.result.core)
-
     implementation(platform(_1fexd.composeKit.bom))
+    implementation(platform(LinkSheet.flavors.bom))
+    implementation(AndroidX.core.ktx)
+    implementation(Grrfe.std.result.core)
     implementation(_1fexd.composeKit.core)
-
-    implementation(platform(LinkSheet.flavors.bom.withVersion("0.0.15")))
-    implementation(LinkSheet.flavors.core.withVersion("0.0.15"))
-//    implementation(platform("com.github.LinkSheet.flavors:platform:0.0.13"))
-//    implementation("com.github.LinkSheet.flavors:core:0.0.13")
+    implementation(LinkSheet.flavors.core)
 }

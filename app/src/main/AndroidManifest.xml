@@ -3,7 +3,6 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools">
 
-
     <queries>
         <!-- Legacy LinkSheet packages -->
         <package android:name="fe.linksheet" />
@@ -39,6 +38,5 @@
         </service>
         <service android:name=".AssistSessionService" android:exported="true"
                  android:permission="android.permission.BIND_VOICE_INTERACTION"/>
-
     </application>
 </manifest>
